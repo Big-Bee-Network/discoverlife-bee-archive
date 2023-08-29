@@ -66,7 +66,7 @@ To query for all subgenus names appearing in the pages, you can use:
 
 ~~~
 preston ls\
- --remote https://linker.bio,https://github.com/Big-Bee-Network/discoverlife-bee-archive/raw/main/data/,https://softwareheritage.org
+ --remote https://linker.bio,https://github.com/Big-Bee-Network/discoverlife-bee-archive/raw/main/data/,https://softwareheritage.org\
  --anchor hash://sha256/86e7ce5f3df9a136a2957de5655261c007b95e217b2f0901988ffb39ee0230fe\
  -l tsv\
  | grep -v well-known\
