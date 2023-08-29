@@ -3,22 +3,13 @@ title: DiscoverLife Bee Checklist Archive
 date: 2023-08-29
 author: 
   - Poelen, JH
+abstract: |
+  This archive provides a snapshot of: Ascher, J. S. and J. Pickering. 2022. Discover Life bee species guide and world checklist (Hymenoptera: Apoidea: Anthophila). http://www.discoverlife.org/mp/20q?guide=Apoidea_species The reason for making this snapshot is to provide a citable data package containing the DiscoverLife Bee checklist for use in data synthesis and integration workflows. This data package is versioned and made verifiable using Preston, a biodiversity data tracker.
 ---
 
-# Abstract
-
-This archive provides a snapshot of:
-
-Ascher, J. S. and J. Pickering. 2022.
-Discover Life bee species guide and world checklist (Hymenoptera: Apoidea: Anthophila).
-http://www.discoverlife.org/mp/20q?guide=Apoidea_species
-
-The reason for making this snapshot is to provide a citable data package containing the DiscoverLife Bee checklist. This data package is versioned and made verifiable using [Preston](https://github.com/bio-guoda/preston). 
-
+:warning: work in progress
 
 # Introduction
-
-
 
 # Methods
 
