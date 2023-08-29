@@ -49,4 +49,40 @@ preston ls -l tsv\
  | xargs preston track
 ~~~
 
-yielding an archive with all bee species pages resolved. 
+yielding an archive with all bee species pages resolved.
+
+# Results
+
+The resulting archive can be used to access a versioned copy of discover life. The archive contains HTML pages that appear to be consistently structured. This consistent structure allow for scripts, or other computer programs, to automatically transform the data into a format suitable for reuse.
+
+For instance, to query for all subgenus names appearing in the pages, you can use:
+
+~~~
+preston ls -l tsv\
+ | grep -v well-known\
+ | grep hasVersion\
+ | cut -f3\
+ | preston cat\
+ | grep "Subgenus:"\
+ | sed 's+<br>.*<i>++g'\
+ | sed 's+</i></a></small>++g'\
+ | sort\
+ | uniq -c\
+ | sort -nr\
+ | head
+~~~
+
+yields the top 10 most frequent appearances of (likely) subgenus names in the bee species pages ordered by decreasing frequency:
+
+~~~
+   5600 None
+    765 Uncertain
+    448 Perdita
+    403 Dialictus
+    259 Hemihalictus
+    209 Eutricharaea
+    179 Ctenonomia
+    161 Homalictus
+    152 Anthidium
+    151 Lasioglossum
+~~~
