@@ -5,7 +5,7 @@ author:
   - Poelen, JH
 ---
 
-# discoverlife-bee-archive
+# Abstract
 
 This archive provides a snapshot of:
 
@@ -15,11 +15,10 @@ http://www.discoverlife.org/mp/20q?guide=Apoidea_species
 
 The reason for making this snapshot is to provide a citable data package containing the DiscoverLife Bee checklist. This data package is versioned and made verifiable using [Preston](https://github.com/bio-guoda/preston). 
 
-The current content identifiers of this versioned package are:
 
-hash://sha256/86e7ce5f3df9a136a2957de5655261c007b95e217b2f0901988ffb39ee0230fe
+# Introduction
 
-hash://md5/55fe2b12ab306704ce332d97723b95af
+
 
 # Methods
 
@@ -37,7 +36,7 @@ preston track "https://www.discoverlife.org/mp/20q/?act=x_checklist&guide=Apoide
  | xmllint --html --xpath '//table//tr/td/i/a/@href' -\
  | cut --delimiter '"' -f2 | sed 's+^+https://www.discoverlife.org+g'\
  | xargs -L100 preston track  
-```
+~~~
 
 and, finally, the following command was run to re-try previously failed web requests:
 
@@ -55,10 +54,21 @@ yielding an archive with all bee species pages resolved.
 
 The resulting archive can be used to access a versioned copy of discover life. The archive contains HTML pages that appear to be consistently structured. This consistent structure allow for scripts, or other computer programs, to automatically transform the data into a format suitable for reuse.
 
-For instance, to query for all subgenus names appearing in the pages, you can use:
+The current content identifiers of this versioned package are:
+
+hash://sha256/86e7ce5f3df9a136a2957de5655261c007b95e217b2f0901988ffb39ee0230fe
+
+hash://md5/55fe2b12ab306704ce332d97723b95af
+
+Example 1. List Most Frequently Appearing Bee Subgenus Names 
+
+To query for all subgenus names appearing in the pages, you can use:
 
 ~~~
-preston ls -l tsv\
+preston ls\
+ --remote https://linker.bio,https://github.com/Big-Bee-Network/discoverlife-bee-archive/raw/main/data/,https://softwareheritage.org
+ --anchor hash://sha256/86e7ce5f3df9a136a2957de5655261c007b95e217b2f0901988ffb39ee0230fe\
+ -l tsv\
  | grep -v well-known\
  | grep hasVersion\
  | cut -f3\
@@ -86,3 +96,7 @@ yields the top 10 most frequent appearances of (likely) subgenus names in the be
     152 Anthidium
     151 Lasioglossum
 ~~~
+
+# Discussion
+
+
