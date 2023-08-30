@@ -14,3 +14,4 @@ function export_to {
 
 export_to pdf
 export_to html
+export_to docx
