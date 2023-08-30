@@ -49,7 +49,7 @@ The resulting archive can be used to access a versioned copy of discover life. T
 
 | discoverlife url | content id |
 | --- | --- |
-| [...guide=Apoidea_species&flags=HAS](https://www.discoverlife.org/mp/20q/?act=x_checklist&guide=Apoidea_species&flags=HAS)  | [hash://sha256/c4fc072c4977b8a55fc386402b6b2b3128f9de27349e61b369c887ce88e525e8](data/c4/fc/c4fc072c4977b8a55fc386402b6b2b3128f9de27349e61b369c887ce88e525e8) |
+| [...guide=Apoidea_species&flags=HAS](https://www.discoverlife.org/mp/20q/?act=x_checklist&guide=Apoidea_species&flags=HAS)  | [sha256:c4f...](data/c4/fc/c4fc072c4977b8a55fc386402b6b2b3128f9de27349e61b369c887ce88e525e8) |
 | [...Andrena+angustior](https://www.discoverlife.org/mp/20q?search=Andrena+angustior)  | [sha256;3091...](data/30/91/3091d3029b4349a8b851cabd982da9d805d881ad0d334eac9c87d7c738ac676f) |
 | [...Andrena+angusticrus](https://www.discoverlife.org/mp/20q?search=Andrena+angusticrus)  | [sha256:afe0...](data/af/e0/afe0f96a9c6d8e5aacddc00e79ef18eac4a8d48f2bec888d5d800feca2d37aae) |
 
