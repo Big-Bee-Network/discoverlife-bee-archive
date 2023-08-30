@@ -62,9 +62,16 @@ hash://sha256/86e7ce5f3df9a136a2957de5655261c007b95e217b2f0901988ffb39ee0230fe
 
 hash://md5/55fe2b12ab306704ce332d97723b95af
 
-Example 1. List Most Frequently Appearing Bee Subgenus Names 
+## Example 1. List Most Frequently Appearing Bee Subgenus Names 
 
-To query for all subgenus names appearing in the pages, you can use:
+DiscoverLife species pages document subgenera associated with bee species in html fragments such as:
+
+~~~ { .html }
+<small>Subgenus: <a href="/mp/20p?see=Archianthidium&amp;name=Trachusa&amp;flags=subgenus:"><i>Archianthidium</i></a></small>
+~~~
+: [This html fragment](https://linker.bio/line:hash://sha256/ce144a314ef4bafa714f6921506544730910935a870786964506dc18c65349dd!/L60) was extracted from [https://www.discoverlife.org/mp/20q?search=Trachusa+forcipata](https://www.discoverlife.org/mp/20q?search=Trachusa+forcipata) with content id [hash://sha256/ce144a314ef4bafa714f6921506544730910935a870786964506dc18c65349dd](data/ce/14/ce144a314ef4bafa714f6921506544730910935a870786964506dc18c65349dd).
+
+To query for the top 10 most frequently appearing subgenera appearing in the pages, you can use:
 
 ~~~ { .bash .numberLines }
 preston ls\
@@ -84,21 +91,32 @@ preston ls\
  | head
 ~~~
 
-yields the top 10 most frequent appearances of (likely) subgenus names in the bee species pages ordered by decreasing frequency:
+The result is shown in the table below.
 
-~~~
-   5600 None
-    765 Uncertain
-    448 Perdita
-    403 Dialictus
-    259 Hemihalictus
-    209 Eutricharaea
-    179 Ctenonomia
-    161 Homalictus
-    152 Anthidium
-    151 Lasioglossum
-~~~
+
+ | frequency | subgenus |
+ | --- | --- |
+ | 5600 | None |
+ |  765 | Uncertain |
+ |  448 | Perdita |
+ |  403 | Dialictus |
+ |  259 | Hemihalictus |
+ |  209 | Eutricharaea |
+ |   179 | Ctenonomia |
+ |   161 | Homalictus |
+ |   152 | Anthidium |
+ |   151 | Lasioglossum |
+:Top 10 most frequent appearances of (likely) subgenus names in the bee species pages ordered by decreasing frequency:
+
+## Example 2. List most frequently occurring bee hosts.
+
+The DiscoverLife Bee checklist contains information about (plant) hosts associated with specific bees. This information is captured in html snippets such as:
+
+ 
+
+
+
 
 # Discussion
 
-
+Biodiversity datasets are available online as html pages, or structured in other digital formats. In this publication, one such resource [@ascher2022] was tracked and packaged into a citable biodiversity dataset containing over 20k HTML resources. The data tracking method may be applied to other currently available network-accessible biodiversity datasets in an effort to turn webpages into versioned digital research objects.
