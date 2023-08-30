@@ -243,7 +243,26 @@
     code span.va { color: #19177c; } /* Variable */
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -286,6 +305,7 @@ id="toc-example-1.-list-most-frequently-appearing-bee-subgenus-names">Example
 id="toc-example-2.-list-bee-hosts">Example 2. List Bee Hosts</a></li>
 </ul></li>
 <li><a href="#discussion" id="toc-discussion">Discussion</a></li>
+<li><a href="#bibliography" id="toc-bibliography">References</a></li>
 </ul>
 </nav>
 <p>:warning: work in progress</p>
@@ -297,12 +317,13 @@ storage, processing and networking technologies are within reach of
 increasingly available through the internet. However, evidence
 suggestions these network accessible digital datasets are likely to
 become unavailable due to linkrot, or change due to content drift <span
-class="citation" data-cites="elliott2020">[@elliott2020,
-@elliott2023]</span>. To help reduce the risk of dataloss (or change) of
-valuable digital biodiversity datasets, content-based data tracking
-methods are applied to a commonly used digital biodiversity resource,
-the DiscoverLife Bee Checklist <span class="citation"
-data-cites="ascher2022">[@ascher2022]</span>.</p>
+class="citation" data-cites="Elliott_2020 Elliott_2023">(Elliott,
+Poelen, and Fortes 2020, 2023)</span>. To help reduce the risk of
+dataloss (or change) of valuable digital biodiversity datasets,
+content-based data tracking methods are applied to a commonly used
+digital biodiversity resource, the DiscoverLife Bee Checklist <span
+class="citation" data-cites="Ascher_2022">(Ascher and Pickering
+2022)</span>.</p>
 <h1 id="methods">Methods</h1>
 <p>To help version a snapshot of the DiscoverLife Bee Checklist, the
 following openly available tools were used: bash, Preston, grep,
@@ -322,7 +343,7 @@ class="sourceCode numberSource bash numberLines"><code class="sourceCode bash"><
 <span id="cb1-11"><a href="#cb1-11"></a> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s+^+https://www.discoverlife.org+g&#39;</span><span class="dt">\</span></span>
 <span id="cb1-12"><a href="#cb1-12"></a> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-L100</span> preston track  </span>
 <span id="cb1-13"><a href="#cb1-13"></a></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># re-try previously failed web requests</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># retry previously failed web requests, if needed.</span></span>
 <span id="cb1-15"><a href="#cb1-15"></a><span class="ex">preston</span> ls <span class="at">-l</span> tsv<span class="dt">\</span></span>
 <span id="cb1-16"><a href="#cb1-16"></a> <span class="kw">|</span> <span class="fu">grep</span> well-known<span class="dt">\</span></span>
 <span id="cb1-17"><a href="#cb1-17"></a> <span class="kw">|</span> <span class="fu">grep</span> hasVersion<span class="dt">\</span></span>
@@ -510,7 +531,7 @@ host species by combining an XPath query (line 3) with a regular
 expression (line 4).</p>
 <p>This script was used to generate the following list of known hosts of
 Agapostemon taxanus, as claimed by <span class="citation"
-data-cites="ascher2022">[@ascher2022]</span>:</p>
+data-cites="Ascher_2022">(Ascher and Pickering 2022)</span>:</p>
 <pre><code>Achillea millefolium
 Aletris farinosa
 Arnica sp
@@ -586,17 +607,38 @@ Trifolium repens
 Verbena sp
 Vernonia noveboracensis</code></pre>
 <p>The examples above show two applications of data extraction from
-<span class="citation" data-cites="ascher2022">[@ascher2022]</span>:
-extracting most frequently appearing subgenera names, and extracting
-host plants for a specific species page.</p>
+<span class="citation" data-cites="Ascher_2022">(Ascher and Pickering
+2022)</span>: extracting most frequently appearing subgenera names, and
+extracting host plants for a specific species page.</p>
 <h1 id="discussion">Discussion</h1>
 <p>Biodiversity datasets are available online as html pages, or
 structured in other digital formats. In this publication, one such
-resource <span class="citation"
-data-cites="ascher2022">[@ascher2022]</span> was tracked and packaged
-into a citable biodiversity dataset containing over 20k HTML resources.
-The data tracking method may be applied to other currently available
+resource <span class="citation" data-cites="Ascher_2022">(Ascher and
+Pickering 2022)</span> was tracked and packaged into a citable
+biodiversity dataset containing over 20k HTML resources. The data
+tracking method may be applied to other currently available
 network-accessible biodiversity datasets in an effort to turn webpages
 into versioned digital research objects.</p>
+<h1 class="unnumbered" id="bibliography">References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+role="list">
+<div id="ref-Ascher_2022" class="csl-entry" role="listitem">
+Ascher, John S., and John Pickering. 2022. <span>“Discover Life Bee
+Species Guide and World Checklist (Hymenoptera: Apoidea:
+Anthophila).”</span> DiscoverLife. <a
+href="http://www.discoverlife.org/mp/20q?guide=Apoidea_species">http://www.discoverlife.org/mp/20q?guide=Apoidea_species</a>.
+</div>
+<div id="ref-Elliott_2020" class="csl-entry" role="listitem">
+Elliott, Michael J., Jorrit H. Poelen, and José A. B. Fortes. 2020.
+<span>“Toward Reliable Biodiversity Dataset References.”</span>
+<em>Ecological Informatics</em> 59 (September): 101132. <a
+href="https://doi.org/10.1016/j.ecoinf.2020.101132">https://doi.org/10.1016/j.ecoinf.2020.101132</a>.
+</div>
+<div id="ref-Elliott_2023" class="csl-entry" role="listitem">
+———. 2023. <span>“Signing Data Citations Enables Data Verification and
+Citation Persistence.”</span> <em>Scientific Data</em> 10 (1). <a
+href="https://doi.org/10.1038/s41597-023-02230-y">https://doi.org/10.1038/s41597-023-02230-y</a>.
+</div>
+</div>
 </body>
 </html>

@@ -5,13 +5,15 @@ author:
   Poelen, JH
 abstract: |
   Digital biodiversity knowledge resources are increasingly available openly on the internet. Some of these potentially valuable resources are still actively curated, whereas others may have lost their maintenance/curators due to life events, funding, or a change in institutional policy. This data publication records a snapshot of an authoritive resource on the biodiversity of bees: Ascher, J. S. and J. Pickering. 2022. Discover Life bee species guide and world checklist (Hymenoptera: Apoidea: Anthophila). http://www.discoverlife.org/mp/20q?guide=Apoidea_species The reason for making this snapshot is to provide a citable data package containing the DiscoverLife Bee checklist for use in data synthesis and integration workflows. This data package is versioned and made verifiable using Preston, a biodiversity data tracker. With this publication, verifiable versions of the DiscoverLife Bee Checklist can now be cited and copied regardless of their physical location.
+bibliography: biblio.bib
+reference-section-title: References
 ---
 
 :warning: work in progress
 
 # Introduction
 
-Life on earth is sustained through a complex, and diverse, web of relationships between organisms and their environment. Now that digital storage, processing and networking technologies are within reach of (community) scientists, digital datasets documenting life on earth are increasingly available through the internet. However, evidence suggestions these network accessible digital datasets are likely to become unavailable due to linkrot, or change due to content drift [@elliott2020, @elliott2023]. To help reduce the risk of dataloss (or change) of valuable digital biodiversity datasets, content-based data tracking methods are applied to a commonly used digital biodiversity resource, the DiscoverLife Bee Checklist [@ascher2022].  
+Life on earth is sustained through a complex, and diverse, web of relationships between organisms and their environment. Now that digital storage, processing and networking technologies are within reach of (community) scientists, digital datasets documenting life on earth are increasingly available through the internet. However, evidence suggestions these network accessible digital datasets are likely to become unavailable due to linkrot, or change due to content drift [@Elliott_2020; @Elliott_2023]. To help reduce the risk of dataloss (or change) of valuable digital biodiversity datasets, content-based data tracking methods are applied to a commonly used digital biodiversity resource, the DiscoverLife Bee Checklist [@Ascher_2022].  
 
 # Methods
 
@@ -31,7 +33,7 @@ preston track "https://www.discoverlife.org/mp/20q/?act=x_checklist&guide=Apoide
  | sed 's+^+https://www.discoverlife.org+g'\
  | xargs -L100 preston track  
 
-# re-try previously failed web requests
+# retry previously failed web requests, if needed.
 preston ls -l tsv\
  | grep well-known\
  | grep hasVersion\
@@ -131,7 +133,7 @@ preston cat 'hash://sha256/7168d15fe822bc6770954b9e3a3b64b62f05ccad636c293e9d5a0
 
 where, `preston cat ...` streams a species page with content id `hash://sha256/7168d...` and selects associated host species by combining an XPath query (line 3) with a regular expression (line 4). 
 
-This script was used to generate the following list of known hosts of Agapostemon taxanus, as claimed by [@ascher2022]: 
+This script was used to generate the following list of known hosts of Agapostemon taxanus, as claimed by [@Ascher_2022]: 
 
 ~~~
 Achillea millefolium
@@ -210,8 +212,8 @@ Verbena sp
 Vernonia noveboracensis
 ~~~
 
-The examples above show two applications of data extraction from [@ascher2022]: extracting most frequently appearing subgenera names, and extracting host plants for a specific species page.
+The examples above show two applications of data extraction from [@Ascher_2022]: extracting most frequently appearing subgenera names, and extracting host plants for a specific species page.
 
 # Discussion
 
-Biodiversity datasets are available online as html pages, or structured in other digital formats. In this publication, one such resource [@ascher2022] was tracked and packaged into a citable biodiversity dataset containing over 20k HTML resources. The data tracking method may be applied to other currently available network-accessible biodiversity datasets in an effort to turn webpages into versioned digital research objects.
+Biodiversity datasets are available online as html pages, or structured in other digital formats. In this publication, one such resource [@Ascher_2022] was tracked and packaged into a citable biodiversity dataset containing over 20k HTML resources. The data tracking method may be applied to other currently available network-accessible biodiversity datasets in an effort to turn webpages into versioned digital research objects.
