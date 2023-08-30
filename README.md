@@ -2,9 +2,7 @@
 title: DiscoverLife Bee Checklist Archive
 date: 2023-08-29
 author: 
-  - name: Poelen, JH
-    role: archivist
-    orcid: 0000-0003-3138-4118
+  Poelen, JH
 abstract: |
   Digital biodiversity knowledge resources are increasingly available openly on the internet. Some of these potentially valuable resources are still actively curated, whereas others may have lost their maintenance/curators due to life events, funding, or a change in institutional policy. This data publication records a snapshot of an authoritive resource on the biodiversity of bees: Ascher, J. S. and J. Pickering. 2022. Discover Life bee species guide and world checklist (Hymenoptera: Apoidea: Anthophila). http://www.discoverlife.org/mp/20q?guide=Apoidea_species The reason for making this snapshot is to provide a citable data package containing the DiscoverLife Bee checklist for use in data synthesis and integration workflows. This data package is versioned and made verifiable using Preston, a biodiversity data tracker. With this publication, verifiable versions of the DiscoverLife Bee Checklist can now be cited and copied regardless of their physical location.
 ---
@@ -69,7 +67,8 @@ DiscoverLife species pages document subgenera associated with bee species in htm
 ~~~ { .html }
 <small>Subgenus: <a href="/mp/20p?see=Archianthidium&amp;name=Trachusa&amp;flags=subgenus:"><i>Archianthidium</i></a></small>
 ~~~
-: [This html fragment](https://linker.bio/line:hash://sha256/ce144a314ef4bafa714f6921506544730910935a870786964506dc18c65349dd!/L60) was extracted from [https://www.discoverlife.org/mp/20q?search=Trachusa+forcipata](https://www.discoverlife.org/mp/20q?search=Trachusa+forcipata) with content id [hash://sha256/ce144a314ef4bafa714f6921506544730910935a870786964506dc18c65349dd](data/ce/14/ce144a314ef4bafa714f6921506544730910935a870786964506dc18c65349dd).
+
+[The html fragment](https://linker.bio/line:hash://sha256/ce144a314ef4bafa714f6921506544730910935a870786964506dc18c65349dd!/L60) above was seen at a page describing [_Trachusa forcipata_](https://www.discoverlife.org/mp/20q?search=Trachusa+forcipata) with content id [hash://sha256/ce144a314ef4bafa714f6921506544730910935a870786964506dc18c65349dd](data/ce/14/ce144a314ef4bafa714f6921506544730910935a870786964506dc18c65349dd).
 
 To query for the top 10 most frequently appearing subgenera appearing in the pages, you can use:
 
@@ -108,14 +107,109 @@ The result is shown in the table below.
  |   151 | Lasioglossum |
 :Top 10 most frequent appearances of (likely) subgenus names in the bee species pages ordered by decreasing frequency:
 
-## Example 2. List most frequently occurring bee hosts.
+## Example 2. List Bee Hosts
 
 The DiscoverLife Bee checklist contains information about (plant) hosts associated with specific bees. This information is captured in html snippets such as:
 
- 
+~~~ { .html }
+<p><table width="80%"><tr><td><a name="Hosts"><table cellspacing="0" cellpadding="0" border="0"><tr><td colspan=2"><b>Hosts</b> &middot; <a href="/mp/20m?kind=Agapostemon+texanus&m_i=h&m_order=0">map</a></td></tr><tr><td><u>Family</u></td><td><u>Scientific name</u> <font size="-1" face="sans-serif">@ source (<u>records</u>)</font></td></tr><tr><td valign="top"><a href="/20/q?search=Asteraceae">Asteraceae</a>&nbsp;&nbsp;</td><td valign="top" nowrap><a href="/20/q?search=Achillea+millefolium">Achillea millefolium</a><font size="-1" face="sans-serif"> @ UCMS_ENT <a href="/mp/20l?id=UCMS_ENT00058904;UCMS_ENT00058903">(2)</a></font></td></tr>
+~~~
 
+as extracted from [line 538](https://linker.bio/line:hash://sha256/7168d15fe822bc6770954b9e3a3b64b62f05ccad636c293e9d5a07d6fb173ddc!/L538) of [content](data/71/68/7168d15fe822bc6770954b9e3a3b64b62f05ccad636c293e9d5a07d6fb173ddc) associated with DiscoverLife Bee page on [_Agapostemon texanus_](https://www.discoverlife.org/mp/20q?search=Agapostemon+texanus). 
 
+With this, the script below can be constructed to extract hosts from this particular species page:
 
+~~~ { .bash .numberLines }
+preston cat 'hash://sha256/7168d15fe822bc6770954b9e3a3b64b62f05ccad636c293e9d5a07d6fb173ddc'\
+ | xmllint\
+ --html\
+ --xpath "//a[@name='Hosts']/following-sibling::*//td/a/text()"\
+ -\
+ | grep -oE "[A-Z][a-z]{1,}[ ].*"
+~~~
+
+where, `preston cat ...` streams a species page with content id `hash://sha256/7168d...` and selects associated host species by combining an XPath query (line 3) with a regular expression (line 4). 
+
+This script was used to generate the following list of known hosts of Agapostemon taxanus, as claimed by [@ascher2022]: 
+
+~~~
+Achillea millefolium
+Aletris farinosa
+Arnica sp
+Aster simplex
+Aster sp
+Astragalus racemosus
+Baccharis salicina
+Baileya multiradiata
+Barbarea vulgaris
+Beta vulgaris
+Bidens ferulifolia
+Blephilia ciliata
+Chrysanthemum leucanthemum
+Chrysothamnus sp
+Chrysothamnus viscidiflorus
+Cichorium intybus
+Cirsium sp
+Cirsium vulgare
+Cleome serrulata
+Cleome sp
+Convolvulus sepium
+Conyza canadensis
+Coreopsis sp
+Ericameria nauseosa
+Erigeron annuus
+Erigeron leiomerus
+Eriogonum sp
+Erysimum repandum
+Eupatorium purpureum
+Flaveria campestris
+Fragaria virginiana
+Glaucium flavum
+Grindelia sp
+Grindelia squarrosa
+Helianthus annuus
+Helianthus anomalus
+Helianthus sp
+Heterotheca inuloides
+Heterotheca subaxillaris
+Hieracium sp
+Horkelia sp
+Kalmia latifolia
+Larrea tridentata
+Lathyrus japonicus
+Leucanthemum vulgare
+Limonium carolinianum
+Machaeranthera bigelovii
+Machaeranthera sp
+Madia elegans
+Malus pumila
+Medicago sativa
+Petrophyton caespitosum
+Phacelia sp
+Plantago lanceolata
+Poinsettia heterophylla
+Prosopis glandulosa
+Prosopis sp
+Raphanus raphanistrum
+Ratibida columnifera
+Rosa rugosa
+Rubus sp
+Rubus spp
+Salvia carduacea
+Sclerocactus wrightiae
+Senecio sp
+Solidago tenuifolia
+Sphaeralcea sp
+Taraxacum campylodes
+Tephrosia virginiana
+Teucrium canadense
+Trifolium hybridum
+Trifolium repens
+Verbena sp
+Vernonia noveboracensis
+~~~
+
+The examples above show two applications of data extraction from [@ascher2022]: extracting most frequently appearing subgenera names, and extracting host plants for a specific species page.
 
 # Discussion
 

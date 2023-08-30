@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Poelen, JH" />
+  <meta name="dcterms.date" content="2023-08-29" />
+  <title>DiscoverLife Bee Checklist Archive</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height; auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    div.abstract {
+      margin: 2em 2em 2em 2em;
+      text-align: left;
+      font-size: 85%;
+    }
+    div.abstract-title {
+      font-weight: bold;
+      text-align: center;
+      padding: 0;
+      margin-bottom: 0.5em;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">DiscoverLife Bee Checklist Archive</h1>
+<p class="author">Poelen, JH</p>
+<p class="date">2023-08-29</p>
+<div class="abstract">
+<div class="abstract-title">Abstract</div>
+<p>Digital biodiversity knowledge resources are increasingly available
+openly on the internet. Some of these potentially valuable resources are
+still actively curated, whereas others may have lost their
+maintenance/curators due to life events, funding, or a change in
+institutional policy. This data publication records a snapshot of an
+authoritive resource on the biodiversity of bees: Ascher, J. S. and J.
+Pickering. 2022. Discover Life bee species guide and world checklist
+(Hymenoptera: Apoidea: Anthophila).
+http://www.discoverlife.org/mp/20q?guide=Apoidea_species The reason for
+making this snapshot is to provide a citable data package containing the
+DiscoverLife Bee checklist for use in data synthesis and integration
+workflows. This data package is versioned and made verifiable using
+Preston, a biodiversity data tracker. With this publication, verifiable
+versions of the DiscoverLife Bee Checklist can now be cited and copied
+regardless of their physical location.</p>
+</div>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#introduction" id="toc-introduction">Introduction</a></li>
+<li><a href="#methods" id="toc-methods">Methods</a></li>
+<li><a href="#results" id="toc-results">Results</a>
+<ul>
+<li><a
+href="#example-1.-list-most-frequently-appearing-bee-subgenus-names"
+id="toc-example-1.-list-most-frequently-appearing-bee-subgenus-names">Example
+1. List Most Frequently Appearing Bee Subgenus Names</a></li>
+<li><a href="#example-2.-list-bee-hosts"
+id="toc-example-2.-list-bee-hosts">Example 2. List Bee Hosts</a></li>
+</ul></li>
+<li><a href="#discussion" id="toc-discussion">Discussion</a></li>
+</ul>
+</nav>
+<p>:warning: work in progress</p>
+<h1 id="introduction">Introduction</h1>
+<p>Life on earth is sustained through a complex, and diverse, web of
+relationships between organisms and their environment. Now that digital
+storage, processing and networking technologies are within reach of
+(community) scientists, digital datasets documenting life on earth are
+increasingly available through the internet. However, evidence
+suggestions these network accessible digital datasets are likely to
+become unavailable due to linkrot, or change due to content drift <span
+class="citation" data-cites="elliott2020">[@elliott2020,
+@elliott2023]</span>. To help reduce the risk of dataloss (or change) of
+valuable digital biodiversity datasets, content-based data tracking
+methods are applied to a commonly used digital biodiversity resource,
+the DiscoverLife Bee Checklist <span class="citation"
+data-cites="ascher2022">[@ascher2022]</span>.</p>
+<h1 id="methods">Methods</h1>
+<p>To help version a snapshot of the DiscoverLife Bee Checklist, the
+following openly available tools were used: bash, Preston, grep,
+xmllint, cut, and xargs. With these tools the following archiving
+workflow was implemented:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode numberSource bash numberLines"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Makes an archive of DiscoverLife Bee checklist and associated species pages.</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co">#</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="ex">preston</span> track <span class="st">&quot;https://www.discoverlife.org/mp/20q/?act=x_checklist&amp;guide=Apoidea_species&amp;flags=HAS&quot;</span><span class="dt">\</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a> <span class="kw">|</span> <span class="fu">grep</span> hasVersion<span class="dt">\</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a> <span class="kw">|</span> <span class="ex">preston</span> cat<span class="dt">\</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a> <span class="kw">|</span> <span class="ex">xmllint</span> <span class="at">--html</span> <span class="at">--xpath</span> <span class="st">&#39;//table//tr/td/i/a/@href&#39;</span> <span class="at">-</span><span class="dt">\</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">--delimiter</span> <span class="st">&#39;&quot;&#39;</span> <span class="at">-f2</span><span class="dt">\</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s+^+https://www.discoverlife.org+g&#39;</span><span class="dt">\</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-L100</span> preston track  </span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># re-try previously failed web requests</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="ex">preston</span> ls <span class="at">-l</span> tsv<span class="dt">\</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a> <span class="kw">|</span> <span class="fu">grep</span> well-known<span class="dt">\</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a> <span class="kw">|</span> <span class="fu">grep</span> hasVersion<span class="dt">\</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-f1</span><span class="dt">\</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a> <span class="kw">|</span> <span class="fu">xargs</span> preston track</span></code></pre></div>
+<p>In this workflow, <code>preston track</code> in line 6 take a
+snapshot of an html pages that contains references to all bee species
+pages. The output of this tracking process is a stream of statement
+describing the tracking process in great detail. This output is fed into
+<code>grep hasVersion</code> using a linux pipe to selects only
+statements that associate the web location with the content that was
+found. Following, the associated content is streamed to stdout (or
+standard output) using <code>preston cat</code>. Following, URLs to
+species pages are generated from this streamed content by extracting a
+relevant html fragments using a xpath query. Then, this fragment is
+transformed into a URLs using string parsing (i.e.,
+<code>cut --delimiter '"' -f2\</code>) and stream editing (i.e.,
+<code>sed 's+^+https://www.discoverlife.org+g'</code>). The resulting
+URLs of the bees species pages are then tracked, in blocks on 100 URLs,
+by Preston. To help compensate for likely web request failures, the
+workflow was completed with a retry procedure for web locations that
+failed to successfully provide content initially.</p>
+<h1 id="results">Results</h1>
+<p>The resulting archive can be used to access a versioned copy of
+discover life. The archive contains over 20k HTML pages that appear to
+be consistently structured. This consistent structure allow for scripts,
+or other computer programs, to automatically transform the data into a
+format suitable for reuse.</p>
+<table>
+<caption>First three DiscoverLife Bee Checklist HTML resources tracked.
+The first contains the <a
+href="data/c4/fc/c4fc072c4977b8a55fc386402b6b2b3128f9de27349e61b369c887ce88e525e8">index
+page of species pages</a>. The following two are locations, and
+associated content identifiers, to species pages associated with <a
+href="data/30/91/3091d3029b4349a8b851cabd982da9d805d881ad0d334eac9c87d7c738ac676f"><em>Andrena
+angustior</em></a> and <a
+href="data/af/e0/afe0f96a9c6d8e5aacddc00e79ef18eac4a8d48f2bec888d5d800feca2d37aae"><em>Andrena
+angusticrus</em></a>. This table was generated using
+<code>preston alias -l tsv | tail -n3 | tac | cut -f1-3 | mlr --hi --itsvlite --omd cat</code>
+.</caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>url</th>
+<th>content id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>https://www.discoverlife.org/mp/20q/?act=x_checklist&amp;guide=Apoidea_species&amp;flags=HAS</td>
+<td><a
+href="data/c4/fc/c4fc072c4977b8a55fc386402b6b2b3128f9de27349e61b369c887ce88e525e8">hash://sha256/c4fc072c4977b8a55fc386402b6b2b3128f9de27349e61b369c887ce88e525e8</a></td>
+</tr>
+<tr class="even">
+<td>https://www.discoverlife.org/mp/20q?search=Andrena+angustior</td>
+<td><a
+href="data/30/91/3091d3029b4349a8b851cabd982da9d805d881ad0d334eac9c87d7c738ac676f">hash://sha256/3091d3029b4349a8b851cabd982da9d805d881ad0d334eac9c87d7c738ac676f</a></td>
+</tr>
+<tr class="odd">
+<td>https://www.discoverlife.org/mp/20q?search=Andrena+angusticrus</td>
+<td><a
+href="data/af/e0/afe0f96a9c6d8e5aacddc00e79ef18eac4a8d48f2bec888d5d800feca2d37aae">hash://sha256/afe0f96a9c6d8e5aacddc00e79ef18eac4a8d48f2bec888d5d800feca2d37aae</a></td>
+</tr>
+</tbody>
+</table>
+<p>The current content identifiers of this versioned package of
+DiscoverLife Bee Checklist html resources are:</p>
+<p>hash://sha256/86e7ce5f3df9a136a2957de5655261c007b95e217b2f0901988ffb39ee0230fe</p>
+<p>hash://md5/55fe2b12ab306704ce332d97723b95af</p>
+<h2
+id="example-1.-list-most-frequently-appearing-bee-subgenus-names">Example
+1. List Most Frequently Appearing Bee Subgenus Names</h2>
+<p>DiscoverLife species pages document subgenera associated with bee
+species in html fragments such as:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Subgenus: <span class="dt">&lt;</span><span class="kw">a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;/mp/20p?see=Archianthidium</span><span class="dv">&amp;amp;</span><span class="st">name=Trachusa</span><span class="dv">&amp;amp;</span><span class="st">flags=subgenus:&quot;</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="dt">&gt;</span>Archianthidium<span class="dt">&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span></span></code></pre></div>
+<p><a
+href="https://linker.bio/line:hash://sha256/ce144a314ef4bafa714f6921506544730910935a870786964506dc18c65349dd!/L60">The
+html fragment</a> above was seen at a page describing <a
+href="https://www.discoverlife.org/mp/20q?search=Trachusa+forcipata"><em>Trachusa
+forcipata</em></a> with content id <a
+href="data/ce/14/ce144a314ef4bafa714f6921506544730910935a870786964506dc18c65349dd">hash://sha256/ce144a314ef4bafa714f6921506544730910935a870786964506dc18c65349dd</a>.</p>
+<p>To query for the top 10 most frequently appearing subgenera appearing
+in the pages, you can use:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode numberSource bash numberLines"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">preston</span> ls<span class="dt">\</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a> <span class="at">--remote</span> https://linker.bio,https://github.com/Big-Bee-Network/discoverlife-bee-archive/raw/main/data/,https://softwareheritage.org<span class="dt">\</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a> <span class="at">--anchor</span> hash://sha256/86e7ce5f3df9a136a2957de5655261c007b95e217b2f0901988ffb39ee0230fe<span class="dt">\</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a> <span class="at">-l</span> tsv<span class="dt">\</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a> <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-v</span> well-known<span class="dt">\</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a> <span class="kw">|</span> <span class="fu">grep</span> hasVersion<span class="dt">\</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-f3</span><span class="dt">\</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a> <span class="kw">|</span> <span class="ex">preston</span> cat<span class="dt">\</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a> <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;Subgenus:&quot;</span><span class="dt">\</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s+&lt;br&gt;.*&lt;i&gt;++g&#39;</span><span class="dt">\</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s+&lt;/i&gt;&lt;/a&gt;&lt;/small&gt;++g&#39;</span><span class="dt">\</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a> <span class="kw">|</span> <span class="fu">sort</span><span class="dt">\</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a> <span class="kw">|</span> <span class="fu">uniq</span> <span class="at">-c</span><span class="dt">\</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-nr</span><span class="dt">\</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a> <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
+<p>The result is shown in the table below.</p>
+<table>
+<caption>Top 10 most frequent appearances of (likely) subgenus names in
+the bee species pages ordered by decreasing frequency:</caption>
+<thead>
+<tr class="header">
+<th>frequency</th>
+<th>subgenus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>5600</td>
+<td>None</td>
+</tr>
+<tr class="even">
+<td>765</td>
+<td>Uncertain</td>
+</tr>
+<tr class="odd">
+<td>448</td>
+<td>Perdita</td>
+</tr>
+<tr class="even">
+<td>403</td>
+<td>Dialictus</td>
+</tr>
+<tr class="odd">
+<td>259</td>
+<td>Hemihalictus</td>
+</tr>
+<tr class="even">
+<td>209</td>
+<td>Eutricharaea</td>
+</tr>
+<tr class="odd">
+<td>179</td>
+<td>Ctenonomia</td>
+</tr>
+<tr class="even">
+<td>161</td>
+<td>Homalictus</td>
+</tr>
+<tr class="odd">
+<td>152</td>
+<td>Anthidium</td>
+</tr>
+<tr class="even">
+<td>151</td>
+<td>Lasioglossum</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-2.-list-bee-hosts">Example 2. List Bee Hosts</h2>
+<p>The DiscoverLife Bee checklist contains information about (plant)
+hosts associated with specific bees. This information is captured in
+html snippets such as:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;&lt;</span><span class="kw">table</span> <span class="er">width</span><span class="ot">=</span><span class="st">&quot;80%&quot;</span><span class="dt">&gt;&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">a</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;Hosts&quot;</span><span class="dt">&gt;&lt;</span><span class="kw">table</span> <span class="er">cellspacing</span><span class="ot">=</span><span class="st">&quot;0&quot;</span> <span class="er">cellpadding</span><span class="ot">=</span><span class="st">&quot;0&quot;</span> <span class="er">border</span><span class="ot">=</span><span class="st">&quot;0&quot;</span><span class="dt">&gt;&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">td</span> <span class="er">colspan</span><span class="ot">=</span><span class="st">2</span><span class="er">&quot;</span><span class="dt">&gt;&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>Hosts<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span> <span class="dv">&amp;middot;</span> <span class="dt">&lt;</span><span class="kw">a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;/mp/20m?kind=Agapostemon+texanus</span><span class="er">&amp;</span><span class="st">m_i=h</span><span class="er">&amp;</span><span class="st">m_order=0&quot;</span><span class="dt">&gt;</span>map<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">u</span><span class="dt">&gt;</span>Family<span class="dt">&lt;/</span><span class="kw">u</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">u</span><span class="dt">&gt;</span>Scientific name<span class="dt">&lt;/</span><span class="kw">u</span><span class="dt">&gt;</span> <span class="dt">&lt;</span><span class="kw">font</span> <span class="er">size</span><span class="ot">=</span><span class="st">&quot;-1&quot;</span> <span class="er">face</span><span class="ot">=</span><span class="st">&quot;sans-serif&quot;</span><span class="dt">&gt;</span>@ source (<span class="dt">&lt;</span><span class="kw">u</span><span class="dt">&gt;</span>records<span class="dt">&lt;/</span><span class="kw">u</span><span class="dt">&gt;</span>)<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">td</span> <span class="er">valign</span><span class="ot">=</span><span class="st">&quot;top&quot;</span><span class="dt">&gt;&lt;</span><span class="kw">a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;/20/q?search=Asteraceae&quot;</span><span class="dt">&gt;</span>Asteraceae<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span><span class="dv">&amp;nbsp;&amp;nbsp;</span><span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span> <span class="er">valign</span><span class="ot">=</span><span class="st">&quot;top&quot;</span> <span class="er">nowrap</span><span class="dt">&gt;&lt;</span><span class="kw">a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;/20/q?search=Achillea+millefolium&quot;</span><span class="dt">&gt;</span>Achillea millefolium<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;</span><span class="kw">font</span> <span class="er">size</span><span class="ot">=</span><span class="st">&quot;-1&quot;</span> <span class="er">face</span><span class="ot">=</span><span class="st">&quot;sans-serif&quot;</span><span class="dt">&gt;</span> @ UCMS_ENT <span class="dt">&lt;</span><span class="kw">a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;/mp/20l?id=UCMS_ENT00058904;UCMS_ENT00058903&quot;</span><span class="dt">&gt;</span>(2)<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span></code></pre></div>
+<p>as extracted from <a
+href="https://linker.bio/line:hash://sha256/7168d15fe822bc6770954b9e3a3b64b62f05ccad636c293e9d5a07d6fb173ddc!/L538">line
+538</a> of <a
+href="data/71/68/7168d15fe822bc6770954b9e3a3b64b62f05ccad636c293e9d5a07d6fb173ddc">content</a>
+associated with DiscoverLife Bee page on <a
+href="https://www.discoverlife.org/mp/20q?search=Agapostemon+texanus"><em>Agapostemon
+texanus</em></a>.</p>
+<p>With this, the script below can be constructed to extract hosts from
+this particular species page:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode numberSource bash numberLines"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">preston</span> cat <span class="st">&#39;hash://sha256/7168d15fe822bc6770954b9e3a3b64b62f05ccad636c293e9d5a07d6fb173ddc&#39;</span><span class="dt">\</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a> <span class="kw">|</span> <span class="ex">xmllint</span><span class="dt">\</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a> <span class="at">--html</span><span class="dt">\</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a> <span class="at">--xpath</span> <span class="st">&quot;//a[@name=&#39;Hosts&#39;]/following-sibling::*//td/a/text()&quot;</span><span class="dt">\</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a> <span class="at">-</span><span class="dt">\</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a> <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-oE</span> <span class="st">&quot;[A-Z][a-z]{1,}[ ].*&quot;</span></span></code></pre></div>
+<p>where, <code>preston cat ...</code> streams a species page with
+content id <code>hash://sha256/7168d...</code> and selects associated
+host species by combining an XPath query (line 3) with a regular
+expression (line 4).</p>
+<p>This script was used to generate the following list of known hosts of
+Agapostemon taxanus, as claimed by <span class="citation"
+data-cites="ascher2022">[@ascher2022]</span>:</p>
+<pre><code>Achillea millefolium
+Aletris farinosa
+Arnica sp
+Aster simplex
+Aster sp
+Astragalus racemosus
+Baccharis salicina
+Baileya multiradiata
+Barbarea vulgaris
+Beta vulgaris
+Bidens ferulifolia
+Blephilia ciliata
+Chrysanthemum leucanthemum
+Chrysothamnus sp
+Chrysothamnus viscidiflorus
+Cichorium intybus
+Cirsium sp
+Cirsium vulgare
+Cleome serrulata
+Cleome sp
+Convolvulus sepium
+Conyza canadensis
+Coreopsis sp
+Ericameria nauseosa
+Erigeron annuus
+Erigeron leiomerus
+Eriogonum sp
+Erysimum repandum
+Eupatorium purpureum
+Flaveria campestris
+Fragaria virginiana
+Glaucium flavum
+Grindelia sp
+Grindelia squarrosa
+Helianthus annuus
+Helianthus anomalus
+Helianthus sp
+Heterotheca inuloides
+Heterotheca subaxillaris
+Hieracium sp
+Horkelia sp
+Kalmia latifolia
+Larrea tridentata
+Lathyrus japonicus
+Leucanthemum vulgare
+Limonium carolinianum
+Machaeranthera bigelovii
+Machaeranthera sp
+Madia elegans
+Malus pumila
+Medicago sativa
+Petrophyton caespitosum
+Phacelia sp
+Plantago lanceolata
+Poinsettia heterophylla
+Prosopis glandulosa
+Prosopis sp
+Raphanus raphanistrum
+Ratibida columnifera
+Rosa rugosa
+Rubus sp
+Rubus spp
+Salvia carduacea
+Sclerocactus wrightiae
+Senecio sp
+Solidago tenuifolia
+Sphaeralcea sp
+Taraxacum campylodes
+Tephrosia virginiana
+Teucrium canadense
+Trifolium hybridum
+Trifolium repens
+Verbena sp
+Vernonia noveboracensis</code></pre>
+<p>The examples above show two applications of data extraction from
+<span class="citation" data-cites="ascher2022">[@ascher2022]</span>:
+extracting most frequently appearing subgenera names, and extracting
+host plants for a specific species page.</p>
+<h1 id="discussion">Discussion</h1>
+<p>Biodiversity datasets are available online as html pages, or
+structured in other digital formats. In this publication, one such
+resource <span class="citation"
+data-cites="ascher2022">[@ascher2022]</span> was tracked and packaged
+into a citable biodiversity dataset containing over 20k HTML resources.
+The data tracking method may be applied to other currently available
+network-accessible biodiversity datasets in an effort to turn webpages
+into versioned digital research objects.</p>
+</body>
+</html>
