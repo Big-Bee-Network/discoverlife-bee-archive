@@ -146,7 +146,7 @@ preston cat 'hash://sha256/7168d15fe822bc6770954b9e3a3b64b62f05ccad636c293e9d5a0
 
 where, `preston cat ...` streams a species page with content id `hash://sha256/7168d...` and selects associated host species by combining an XPath query (line 3) with a regular expression (line 4). 
 
-This script was used to generate the following list of known hosts of Agapostemon taxanus, as claimed by [@Ascher_2022]: 
+This script was used to generate the following list of known hosts of _Agapostemon texanus_, as claimed by [@Ascher_2022]: 
 
 ~~~
 Achillea millefolium
