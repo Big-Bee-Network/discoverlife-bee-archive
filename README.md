@@ -125,7 +125,7 @@ The result is shown in the table below.
 
 ## Example 2. List Bee Hosts
 
-The DiscoverLife Bee checklist contains information about (plant) hosts associated with specific bees. This information is captured in html snippets such as:
+The Discover Life Bee Checklist contains information about (plant) hosts associated with specific bees. This information is captured in HTML snippets such as:
 
 ~~~ { .html }
 <p><table width="80%"><tr><td><a name="Hosts"><table cellspacing="0" cellpadding="0" border="0"><tr><td colspan=2"><b>Hosts</b> &middot; <a href="/mp/20m?kind=Agapostemon+texanus&m_i=h&m_order=0">map</a></td></tr><tr><td><u>Family</u></td><td><u>Scientific name</u> <font size="-1" face="sans-serif">@ source (<u>records</u>)</font></td></tr><tr><td valign="top"><a href="/20/q?search=Asteraceae">Asteraceae</a>&nbsp;&nbsp;</td><td valign="top" nowrap><a href="/20/q?search=Achillea+millefolium">Achillea millefolium</a><font size="-1" face="sans-serif"> @ UCMS_ENT <a href="/mp/20l?id=UCMS_ENT00058904;UCMS_ENT00058903">(2)</a></font></td></tr>
@@ -232,3 +232,5 @@ The examples above show two applications of data extraction from [@Ascher_2022]:
 Biodiversity datasets are available online as html pages, or structured in other digital formats. In this publication, one such resource [@Ascher_2022] was tracked and packaged into a citable biodiversity dataset containing over 20k HTML resources. The data tracking method may be applied to other currently available network-accessible biodiversity datasets in an effort to turn webpages into versioned digital research objects.
 
 In the results, the `None` is explicit, meaning that there is no subgenus for the species. `Uncertain` indicates the species' uncertain subgeneric placement. The other most common subgeneric names reflect the number of species within each subgenus, indicating Perdita is the most speciose subgenus.
+
+The floral hosts listed in the Discover Life Bee Checklist are sourced from digitized museum specimen records and digitization projects. The host records also indicate the source (institution or project) that shared the data. Commonly, these come from BBSL - Bee Biology & Systematics Laboratory (USDA) and AMNH_BEE (John Ascher, Digital Bee Collections Network data archive from the Collaborative databasing of North American bee collections within a global informatics network project. Version: 08 Mar 2016. National Science Foundation grants DBI 0956388 and DBI 0956340)
