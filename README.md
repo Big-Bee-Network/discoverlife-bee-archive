@@ -1,11 +1,11 @@
 ---
-title: DiscoverLife Bee Checklist Archive
+title: Discover Life Bee Checklist Archive
 date: 2023-08-29
 author: 
   - Poelen, JH https://orcid.org/0000-0003-3138-4118
   - Seltmann, KC https://orcid.org/0000-0001-5354-6048
 abstract: |
-  Digital biodiversity knowledge resources are increasingly available openly on the internet. Some of these potentially valuable resources are still actively curated, whereas others may have lost their maintenance/curators due to life events, funding, or a change in institutional policy. This data publication records a snapshot of the authoritive resource on the biodiversity of bees: Ascher, J. S. and J. Pickering. 2022. Discover Life bee species guide and world checklist (Hymenoptera: Apoidea: Anthophila). http://www.discoverlife.org/mp/20q?guide=Apoidea_species Draft-55, 17 November 2020. The reason for making this snapshot is to provide a citable data package containing the Discover Life Bee Checklist for use in data synthesis and integration workflows. This data package is versioned and made verifiable using Preston, a biodiversity data tracker. With this publication, verifiable versions of the DiscoverLife Bee Checklist can now be cited and copied regardless of their physical location.
+  Digital biodiversity knowledge resources are increasingly available openly on the internet. Some of these potentially valuable resources are still actively curated, whereas others may have lost their maintenance/curators due to life events, funding, or a change in institutional policy. This data publication records a snapshot of the authoritative resource on the biodiversity of bees: Ascher, J. S. and J. Pickering. 2022. Discover Life bee species guide and world checklist (Hymenoptera: Apoidea: Anthophila). http://www.discoverlife.org/mp/20q?guide=Apoidea_species Draft-55, 17 November 2020. The reason for making this snapshot is to provide a citable data package containing the Discover Life Bee Checklist for use in data synthesis and integration workflows. This data package is versioned and made verifiable using Preston, a biodiversity data tracker. With this publication, verifiable versions of the Discover Life Bee Checklist can now be cited and copied regardless of physical location.
 bibliography: biblio.bib
 reference-section-title: References
 # include headers to enable line wrapping for code blocks
@@ -52,13 +52,13 @@ preston ls -l tsv\
 
 In this workflow, on line 6, the command `preston track` captures a snapshot of HTML pages that contain references to pages for various bee species. The result of this tracking process is a detailed stream of statements describing the tracking steps. This output is then passed to grep hasVersion through a Linux pipe, which filters and selects only the statements that connect the web addresses with the discovered content.
 
-Subsequently, the content associated with these statements is streamed to the standard output using the `preston cat` command. From this streamed content, URLs to the species pages are generated. This is done by first extracting relevant HTML fragments using an xpath query. Then, these fragments are transformed into URLs using a combination of string parsing (using the cut --delimiter '"' -f2 command) and stream editing (with sed 's+^+https://www.discoverlife.org+g').
+Subsequently, the content associated with these statements is streamed to the standard output using the `preston cat` command. From this streamed content, URLs to the species pages are generated. This is done by first extracting relevant HTML fragments using an XPath query. Then, these fragments are transformed into URLs using a combination of string parsing (using the cut --delimiter '"' -f2 command) and stream editing (with `sed 's+^+https://www.discoverlife.org+g'`).
 
-The resulting URLs, which lead to pages about bee species, are organized into blocks of 100 URLs each and tracked using the Preston tool. To account for potential failures in making web requests, the workflow includes a retry procedure. This ensures that web locations that initially fail to provide content are retried to compensate for any issues.
+The resulting URLs, which lead to pages about bee species, are organized into blocks of 100 URLs each and tracked using the Preston tool. The workflow includes a retry procedure to account for potential failures in making web requests. This ensures that web locations that initially fail to provide content are retried to compensate for any issues.
 
 # Results
 
-The resulting archive can access a versioned copy of the Discover Life Bee Checklist. The archive contains over 20k HTML pages that appear to be consistently structured. This consistent structure allows for scripts or other computer programs to automatically transform the data into a format suitable for reuse.
+The resulting archive can access a versioned copy of the Discover Life Bee Checklist. The archive contains over 20k HTML pages that appear to be consistently structured. This consistent structure allows scripts or other computer programs to transform the data into a format suitable for reuse automatically.
 
 
 
