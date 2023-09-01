@@ -230,3 +230,5 @@ The examples above show two applications of data extraction from [@Ascher_2022]:
 # Discussion
 
 Biodiversity datasets are available online as html pages, or structured in other digital formats. In this publication, one such resource [@Ascher_2022] was tracked and packaged into a citable biodiversity dataset containing over 20k HTML resources. The data tracking method may be applied to other currently available network-accessible biodiversity datasets in an effort to turn webpages into versioned digital research objects.
+
+In the results, the `None` is explicit, meaning that there is no subgenus for the species. `Uncertain` indicates the species' uncertain subgeneric placement. The other most common subgeneric names reflect the number of species within each subgenus, indicating Perdita is the most speciose subgenus.
